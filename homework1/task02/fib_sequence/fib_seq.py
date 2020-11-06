@@ -19,7 +19,10 @@ def check_fibonacci(data: Sequence[int]) -> bool:
         True if successful, False otherwise.
 
     """
-    data = (int(i) for i in data)
+    if isinstance(data, str):
+        data = (int(i) for i in data.split())
+    else:
+        data = (int(i) for i in data)
     previous = 0
     current = 1
     for pos, elem in enumerate(data):
