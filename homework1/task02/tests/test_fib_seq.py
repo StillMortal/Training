@@ -9,10 +9,10 @@ from fib_sequence.fib_seq import check_fibonacci
     [
         ([], True),
         ((0,), True),
-        ("01", True),
+        ("0 1", True),
         ([0, 1, 1, 2, 3, 5], True),
         ((1,), False),
-        ("23", False),
+        ("2 3", False),
         ([1, 1, 2], False),
         ((1, 1, 2, 3, 4), False),
     ],
