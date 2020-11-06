@@ -2,7 +2,7 @@ def check_power_of_2(a: int) -> bool:
     """Whether the number is a power of 2.
 
     Args:
-        a (int): number.
+        a: Number.
 
     Returns:
         True if successful, False otherwise.

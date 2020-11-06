@@ -2,7 +2,9 @@
 Given a cell with "it's a fib sequence" from slideshow,
     please write function "check_fib", which accepts a Sequence of integers,
     and returns if the given sequence is a Fibonacci sequence
+
 We guarantee, that the given sequence contain >= 0 integers inside.
+
 """
 from collections import Sequence
 
@@ -11,7 +13,7 @@ def check_fibonacci(data: Sequence[int]) -> bool:
     """Whether the sequence is a Fibonacci sequence.
 
     Args:
-        data (Sequence[int]): sequence
+        data: Sequence.
 
     Returns:
         True if successful, False otherwise.
@@ -33,10 +35,3 @@ def check_fibonacci(data: Sequence[int]) -> bool:
                 return False
 
     return True
-
-
-print(check_fibonacci([1, 3, 5]))
-print(check_fibonacci([0, 1, 1]))
-print(check_fibonacci((1, 3, 5)))
-print(check_fibonacci("011"))
-# print(check_fibonacci())
