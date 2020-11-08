@@ -17,28 +17,26 @@ with open("some_file.txt") as fi:
 from typing import Tuple
 
 
-def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
+def find_maximum_and_minimum(file_path: str) -> Tuple[int, int]:
     """Finds the maximum and minimum values in the file.
 
     Args:
-        file_name: File_name.
+        file_path: Path to file.
 
     Returns:
         A tuple containing the maximum and minimum values.
 
     """
-    with open(file_name + ".txt") as fi:
+    with open(file_path + ".txt") as fi:
 
         max_value = float("-inf")
         min_value = float("inf")
 
         for line in fi:
-            values = tuple(int(i) for i in line.split())
+            values = [int(i) for i in line.split()]
 
-            candidate = max(values)
-            max_value = candidate if candidate > max_value else max_value
+            max_value = max(max_value, *values)
 
-            candidate = min(values)
-            min_value = candidate if candidate < min_value else min_value
+            min_value = min(min_value, *values)
 
     return max_value, min_value

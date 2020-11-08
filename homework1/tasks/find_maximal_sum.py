@@ -16,14 +16,14 @@ def find_maximal_sum(nums: List[int], k: int) -> int:
     """Finds a sub-array with length less equal to "k", with maximal sum.
 
     Args:
-        nums: The first parameter.
-        k: The second parameter.
+        nums: The initial list where we find the subarray with the max sum.
+        k: Size of the subarray.
 
     Returns:
         Maximal sum.
 
     """
-    maximal_sum = 0
+    maximal_sum = nums[0] if len(nums) > 0 else 0
 
     for num_of_elements in range(1, k + 1):
         num_of_used = 0

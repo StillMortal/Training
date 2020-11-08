@@ -10,22 +10,22 @@ We guarantee, that all A, B, C, D have same length of N where 0 ≤ N ≤ 1000.
 from typing import List
 
 
-def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]):
+def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) -> int:
     """Number of tuples (i, j, k, l) such that a[i] + b[j] + c[k] + d[l] is zero.
 
     Args:
-        a: The first parameter.
-        b: The second parameter.
-        c: The third parameter.
-        d: The fourth parameter.
+        a: The first list.
+        b: The second list.
+        c: The third list.
+        d: The fourth list.
 
     Returns:
         Number of tuples.
 
     """
-    element_sum_of_a_and_b = tuple(a_i + b_i for a_i in a for b_i in b)
-    element_sum_of_c_and_d = tuple(c_i + d_i for c_i in c for d_i in d)
+    element_sum_of_a_and_b = [a_i + b_i for a_i in a for b_i in b]
+    element_sum_of_c_and_d = [c_i + d_i for c_i in c for d_i in d]
 
-    return tuple(
+    return [
         i + j for i in element_sum_of_a_and_b for j in element_sum_of_c_and_d
-    ).count(0)
+    ].count(0)

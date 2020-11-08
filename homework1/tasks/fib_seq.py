@@ -13,23 +13,21 @@ def check_fibonacci(data: Sequence[int]) -> bool:
     """Whether the sequence is a Fibonacci sequence.
 
     Args:
-        data: Sequence.
+        data: The original sequence to check.
 
     Returns:
         True if successful, False otherwise.
 
     """
-    data = (int(i) for i in data)
-    previous = 0
-    current = 1
-    for pos, elem in enumerate(data):
-        if pos == 0:
-            if elem != previous:
-                return False
-        elif pos == 1:
-            if elem != current:
-                return False
-        else:
+    data = [int(i) for i in data]
+    if len(data) < 3:
+        return False
+    elif data[0] != 0 or data[1] != 1:
+        return False
+    else:
+        previous = 0
+        current = 1
+        for elem in data[2:]:
             previous, current = current, previous + current
             if elem != current:
                 return False
