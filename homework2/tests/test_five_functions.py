@@ -2,7 +2,8 @@ import os
 from typing import List
 
 import pytest
-import tasks.five_functions as func
+
+import homework2.tasks.five_functions as func
 
 
 @pytest.mark.parametrize(

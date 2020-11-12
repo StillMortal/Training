@@ -2,7 +2,8 @@ import string
 from typing import Any, List, Tuple
 
 import pytest
-from tasks.custom_range import custom_range
+
+from homework2.tasks.custom_range import custom_range
 
 
 @pytest.mark.parametrize(

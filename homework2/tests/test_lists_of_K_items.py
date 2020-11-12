@@ -1,7 +1,8 @@
 from typing import Any, List
 
 import pytest
-from tasks.lists_of_K_items import combinations
+
+from homework2.tasks.lists_of_K_items import combinations
 
 
 @pytest.mark.parametrize(

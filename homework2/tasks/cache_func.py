@@ -32,11 +32,20 @@ def cache(func: Callable) -> Callable:
     """
     used_parameters = {}
 
-    def cache_func(*args):
-        args = tuple(i for i in args)
-        if args not in used_parameters:
-            used_parameters[args] = func(*args)
+    def cache_func(*args, **kwargs):
+        parameters = args + tuple(i for j in kwargs.items() for i in j)
+        if parameters not in used_parameters:
+            used_parameters[parameters] = func(*args, **kwargs)
 
-        return used_parameters[args]
+        return used_parameters[parameters]
 
     return cache_func
+
+
+def func(*args, **kwargs):
+    print(args)
+    print(kwargs)
+    return 1
+
+
+cache(func)(7, a=5, b="c")
