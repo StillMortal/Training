@@ -20,6 +20,3 @@ def test_cache_func(
     actual_result = cache(func_to_check)(*args, **kwargs)
 
     assert actual_result == expected_result
-
-
-# !
